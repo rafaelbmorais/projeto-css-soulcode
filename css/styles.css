@@ -6,13 +6,16 @@
 
 body {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse
 }
 
 main {
     height: 100vh;
     background-color: cadetblue;
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    justify-content:space-evenly;
 }
 
 aside {
@@ -21,14 +24,14 @@ aside {
     background-color: goldenrod;
 }
 
-.section1 {
+.section-sobre {
     background-color: red;
 }
 
-.section2 {
+.section-jornada {
     background-color: green;
 }
 
-.section3 {
+.section-networking {
     background-color: chartreuse;
 }
