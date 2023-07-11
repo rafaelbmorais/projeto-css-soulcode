@@ -17,14 +17,13 @@ html {
 }
 
 body {
-    min-width: 100vh;
     display: flex;
-    flex-direction: row-reverse
+    flex-direction: row-reverse;
 }
 
 .section-container {
     background-color: var(--cor-container);
-    height: 100vh;
+    height: auto;
     width: 82vw;
     padding: 20px;
     display: flex;
@@ -51,17 +50,41 @@ body {
     background-color: var(--cor-networking);
     margin-top: 10px;
     padding: 10px;
-    height: auto;
+}
+
+.networking-lista {
+    background-color: azure;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.networking-lista-item {
+    background-color: blueviolet;
+    width: 220px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.networking-lista-item img {
+    width: 100px;
+}
+
+.networking-lista-item p {
+    width: 150px;
 }
 
 aside {
     background-color: var(--cor-aside);
-    height: 100vh;
-    width: 18vw;
+    height: auto;
+    width: 250px;
     padding: 50px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 aside img {
@@ -70,7 +93,7 @@ aside img {
     margin: 0px 0px 5px 0px;
 }
 
-aside p {
+aside h1 {
     margin: 5px 0px 5px 0px;
     font-size: 26px;
     font-weight: bold;
