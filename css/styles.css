@@ -8,23 +8,23 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
-    --cor-container: rgb(141, 114, 238);
-    --cor-aside: rgb(149, 240, 171);
-    --cor-sobre: rgb(235, 110, 110);
-    --cor-jornada: rgb(141, 211, 141);
-    --cor-networking: rgb(201, 228, 128);
+    --cor-backgroung: #000000;
+    --cor-container: #222222;
+    --color-font: #ffffff;
+    --cor-aside: #121212;
+    --cor-sobre: #252525;
+    --cor-jornada: #252525;
+    --cor-networking: #252525;
+    --cor--icon: #2c69c4fd;
 }
 
 body {
-    background-color: brown;
+    background-color: var(--cor-backgroung);
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 2%;
     display: flex;
     flex-direction: row-reverse;
-
-
-
 }
 
 .section-container {
@@ -33,12 +33,11 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-
-
 }
 
 .sobre {
     background-color: var(--cor-sobre);
+    color: var(--color-font);
     margin-bottom: 10px;
     padding: 5px;
 }
@@ -49,43 +48,71 @@ body {
 
 .jornada {
     background-color: var(--cor-jornada);
+    color: var(--color-font);
+    font-size: 16px;
     margin: 10px 0px;
     padding: 5px;
-
 }
 
 .networking {
     background-color: var(--cor-networking);
+    color: var(--color-font);
     margin-top: 10px;
     padding: 5px;
-
 }
 
 .networking-lista {
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 
 .networking-lista-item {
-
+    background-color:#303030;
+    width: 295px;
+    height: 250px;
+    margin: 3px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
 }
 
 .networking-lista-item img {
-
+    width: 100px;
+    border-radius: 100%;
+    margin-bottom: 2px;
 }
 
-.networking-lista-item p {
+.networking-lista-item .subitem {
+    text-align: center;
+}
 
+.networking-lista-item .subitem h1 {
+    margin: 2px 0px;
+}
+
+.networking-lista-item .subitem p {
+    margin: 2px 0px;
+    text-align: center;     
+} 
+
+.networking-lista-item a {
+    margin: 2px 0px;
 }
 
 aside {
     background-color: var(--cor-aside);
+    color: var(--color-font);
     width: 100%;
     padding: 50px 5px 50px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 aside img {
@@ -95,19 +122,56 @@ aside img {
 }
 
 aside h1 {
-    margin: 5px 0px;
+    margin: 10px 0px 30px 0px;
+    font-size: 24px;
 }
 
 aside a {
+    color: var(--color-font);
     margin-top: 5px;
+    text-decoration: none;
+    margin: 8px 0px;
 }
 
-@media screen and (max-width: 1012px) and (min-width: 767px) {
-
-    
+.icon {
+    display: flex;
+    justify-content:center;
+    gap: 12px;
+    border: 1px solid var(--color-font);
+    width: 80%;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 0px;
 }
 
-@media screen and (max-width: 767px) {
+.icon:hover {
+    color: var(--cor--icon);
+    border: 1px solid var(--cor--icon);
+}
 
 
+
+@media screen and (max-width: 888px) {
+    .networking-lista-item {
+        width: 500px;
+        justify-content: space-evenly;
+    }
+
+}
+
+@media screen and (max-width: 777px) {
+    body {
+        flex-direction: column-reverse;
+    }
+
+    .icon {
+        border: none;
+        font-size: 0px;
+    }
+
+    .icon:hover {
+        border: none;
+    }
 }
