@@ -8,7 +8,8 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
-    --cor-body-background: #000000;
+    --cor-body-background: linear-gradient(to right, #0a4b75, #0a4b75, #1e6495, #1e6495);
+    --cor-body-background-media: linear-gradient(to bottom, #0a4b75,#1e6495, #1e6495, #5191c1, #5191c1, #1e6495, #1e6495);
     --cor-networking-cards: #0a4a75ce;
     --cor-section-container: linear-gradient(to right, #1e6495, #5191c1, #1e6495);
     --cor-section-container-media: linear-gradient(to bottom, #1e6495, #5191c1, #1e6495);
@@ -25,7 +26,7 @@ html {
 }
 
 body {
-    background-color: var(--cor-body-background);
+    background-image: var(--cor-body-background);
     max-width: 1350px;
     margin: 0 auto;
     padding: 0 2%;
@@ -46,6 +47,10 @@ body {
     color: var(--cor-fonte-h2);
 }
 
+.section-container span {
+    font-weight: bold;
+}
+
 .sobre {
     color: var(--cor-fonte);
     margin-bottom: 10px;
@@ -54,13 +59,23 @@ body {
 
 .sobre p {
     margin: 5px;
-    padding: 10px;
+    padding: 2px;
     border-radius: 10px;
     text-align: justify;
 }
 
 .sobre ul {
     list-style: none;
+}
+
+.sobre .direcionar {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor-fonte);
+}
+
+.sobre .direcionar:hover {
+    color: var(--cor--button-hover);
 }
 
 .jornada {
@@ -72,7 +87,7 @@ body {
 
 .jornada p {
     margin: 5px;
-    padding: 10px;
+    padding: 2px;
     border-radius: 10px;
     text-align: justify;
 }
@@ -232,6 +247,7 @@ aside .button {
 @media screen and (max-width: 777px) {
     body {
         flex-direction: column-reverse;
+        background-image: var(--cor-body-background-media);
     }
 
     aside {
