@@ -8,18 +8,24 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
-    --cor-background: #000000;
-    --cor-cards: #303030;
-    --cor-container: #222222;
+    --cor-body-background: #000000;
+    --cor-networking-cards: #0a4a75ce;
+    --cor-section-container: linear-gradient(to right, #1e6495, #5191c1, #1e6495);
+    --cor-section-container-media: linear-gradient(to bottom, #1e6495, #5191c1, #1e6495);
     --cor-fonte: #ffffff;
-    --cor-font-h2: #909090;
-    --cor-aside: #121212;
-    --cor-background-div: #252525;
-    --cor--button: #2c69c4;
+    --cor-fonte-h2: #fb6f24;
+    --cor-background-aside: linear-gradient(to right, #0a4b75, #1e6495);
+    --cor-background-aside-media: linear-gradient(to bottom, #0a4b75, #1e6495);
+    --cor-nomes: #fb6f24;
+    --cor--button-hover: #8ca315;
+    --cor--border-image: #8ca315;
+    --cor-button-flutuante-primaria: #fb6f24;
+    --cor-button-flutuante-secundaria: #ffffff;
+    --cor-button-flutuante-shadow: #c0bdbd;
 }
 
 body {
-    background-color: var(--cor-background);
+    background-color: var(--cor-body-background);
     max-width: 1350px;
     margin: 0 auto;
     padding: 0 2%;
@@ -28,7 +34,7 @@ body {
 }
 
 .section-container {
-    background-color: var(--cor-container);
+    background-image: var(--cor-section-container);
     width: 100%;
     padding: 20px;
     display: flex;
@@ -37,7 +43,7 @@ body {
 
 .section-container h2 {
     font-size: 20px;
-    color: var(--cor-font-h2);
+    color: var(--cor-fonte-h2);
 }
 
 .sobre {
@@ -46,12 +52,11 @@ body {
     padding: 5px;
 }
 
-.sobre .descricao {
-    background-color: var(--cor-cards);
+.sobre p {
     margin: 5px;
     padding: 10px;
     border-radius: 10px;
-
+    text-align: justify;
 }
 
 .sobre ul {
@@ -66,7 +71,6 @@ body {
 }
 
 .jornada p {
-    background-color: var(--cor-cards); 
     margin: 5px;
     padding: 10px;
     border-radius: 10px;
@@ -79,11 +83,11 @@ body {
     padding: 5px;
 }
 
-.networking-div {
+.networking-container {
+    background-image: url(../image/background-networking.svg);
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
-    background-image: url(../svg/background.svg);
 }
 
 .networking-lista {
@@ -93,8 +97,8 @@ body {
     justify-content: center;
 }
 
-.networking-lista-item {
-    background-color: var(--cor-cards);
+.networking-cards {
+    background-color: var(--cor-networking-cards);
     width: 295px;
     height: 250px;
     margin: 3px;
@@ -106,41 +110,41 @@ body {
     border-radius: 8px;
 }
 
-.networking-lista-item a {
+.networking-cards .redes-button {
     color: var(--cor-fonte);
     font-size: 28px;
 }
 
-.networking-lista-item img {
+.networking-cards img {
     width: 100px;
     border-radius: 100%;
     margin-bottom: 2px;
 }
 
-.networking-lista-item .subitem {
+.networking-cards .nome-descricao {
     text-align: center;
 }
 
-.networking-lista-item .subitem h1 {
+.networking-cards .nome-descricao h4 {
     margin: 2px 0px;
+    color: var(--cor-nomes);
 }
 
-.networking-lista-item .subitem p {
+.networking-cards .nome-descricao p {
     margin: 2px 0px;
     text-align: center;     
 } 
 
-.networking-lista-item a {
+.networking-cards .redes-button {
     margin: 2px 5px;
 }
 
-.networking-lista-item a:hover {
-    color: var(--cor--button);
+.networking-cards .redes-button:hover {
+    color: var(--cor--button-hover);
 }
 
 aside {
-    background-color: var(--cor-aside);
-    color: var(--color-font);
+    background-image: var(--cor-background-aside);
     width: 70%;
     padding: 50px 5px 50px 5px;
     display: flex;
@@ -152,15 +156,16 @@ aside img {
     width: 180px;
     border-radius: 100%;
     margin-bottom: 5px;
+    border: 2px solid var(--cor--border-image);
 }
 
-aside h1 {
-    color: var(--cor-fonte);
+aside .meu-nome {
+    color: var(--cor-nomes);
     margin: 10px 0px 30px 0px;
     font-size: 24px;
 }
 
-aside a {
+aside .button {
     color: var(--cor-fonte);
     margin-top: 5px;
     text-decoration: none;
@@ -185,54 +190,57 @@ aside a {
 }
 
 .button:hover {
-    color: var(--cor--button);
-    border: 1px solid var(--cor--button);
+    color: var(--cor--button-hover);
+    border: 1px solid var(--cor--button-hover);
 }
 
-.whats-flutuante {
+.email-flutuante {
     position: fixed;
     bottom: 20px;
     right: 20px;
     font-size: 30px;
-    background-color: #01e675;
-    color: #ffffff;
+    background-color: var(--cor-button-flutuante-primaria);
+    color: var(--cor-button-flutuante-secundaria);
     border-radius: 50px;
     width: 50px;
     height: 50px;
     text-align: center;
     text-decoration: none;
     z-index: 100;
-    box-shadow: 2px 2px 2px #c0bdbd;
+    box-shadow: 2px 2px 2px var(--cor-button-flutuante-shadow);
 }
 
-.whats-flutuante i {
+.email-flutuante i {
     margin-top: 12px;
 }
 
-.whats-flutuante:hover {
-    background-color: #ffffff;
-    color: #029e3b;
+.email-flutuante:hover {
+    background-color: var(--cor-button-flutuante-secundaria);
+    color: var(--cor-button-flutuante-primaria);
     font-weight: 900;
-    box-shadow: 2px 2px 2px #5fe690;
+    box-shadow: 2px 2px 2px var(--cor-button-flutuante-primaria);
 }
 
 
 @media screen and (max-width: 909px) {
-    .networking-lista-item {
+    .networking-cards {
         width: 500px;
         justify-content: space-evenly;
     }
-
-    aside {
-        width: 100%;
-    }
-
-
 }
 
 @media screen and (max-width: 777px) {
     body {
         flex-direction: column-reverse;
+    }
+
+    aside {
+        background-image: var(--cor-background-aside-media);
+        width: 100%;
+    }
+
+    .section-container {
+        background-image: var(--cor-section-container-media);
     }
 
     aside {
